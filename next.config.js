@@ -8,6 +8,7 @@
 module.exports = {
   swcMinify: true,
   reactStrictMode: true,
+  basePath: '',
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
     prependData: '@import "variables";',

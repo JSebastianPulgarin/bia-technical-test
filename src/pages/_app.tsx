@@ -1,3 +1,8 @@
 import '../styles/global.scss';
 
-export default ({ Component, pageProps }) => <Component {...pageProps} />;
+import { ThemeProvider } from 'next-themes';
+
+export default ({ Component, pageProps }) => 
+  <ThemeProvider>
+    <Component {...pageProps} />
+  </ThemeProvider>;
