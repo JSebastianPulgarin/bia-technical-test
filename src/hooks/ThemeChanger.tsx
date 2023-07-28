@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import styles from './themeChanger.module.scss'
 import { useTheme } from 'next-themes'
 
 const ThemeChanger = () => {
@@ -14,11 +15,13 @@ const ThemeChanger = () => {
     return null
   }
 
+  const handleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  }
+
   return (
-    <div>
-      The current theme is: {theme}
-      <button onClick={() => setTheme('light')}>Light Mode</button>
-      <button onClick={() => setTheme('dark')}>Dark Mode</button>
+    <div className={styles.darkMode} onClick={handleTheme}>
+      <span className={styles.darkMode__title}>Dark Mode</span>
     </div>
   )
 }

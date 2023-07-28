@@ -1,5 +1,4 @@
 // Colors
-
 // Dark Mode Elements
 $dark-blue: hsl(209, 23%, 22%);
 // Dark Mode Background
@@ -13,8 +12,10 @@ $very-light-gray: hsl(0, 0%, 98%);
 // Dark Mode Text & Light Mode Elements
 $white: hsl(0, 0%, 100%);
 
-
 // Typography
-
-$homepage-items: 14px;
 $detail-page: 16px;
+$homepage-items: 14px;
+
+// layout
+$horizontal-padding: 70px;
+$vertical-padding-content: 30px;
