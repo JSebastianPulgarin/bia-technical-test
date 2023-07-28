@@ -2,6 +2,8 @@ import styles from './countryCard.module.scss';
 
 import Image from 'next/image'
 
+import formatNumberWithCommas from '@/utils/formatNumberWithCommas';
+
 const CountryCard = ({ flag, name, population, region, capital }) => {
   return (
     <div className={styles.card}>
@@ -15,7 +17,7 @@ const CountryCard = ({ flag, name, population, region, capital }) => {
         <span className={styles.info__title}>{name}</span>
         <div className={styles.row}>
           <span className={styles.row__label}>Population: </span>
-          <span className={styles.row__value}>{population}</span>
+          <span className={styles.row__value}>{formatNumberWithCommas(population)}</span>
         </div>
         <div className={styles.row}>
           <span className={styles.row__label}>Region: </span>
