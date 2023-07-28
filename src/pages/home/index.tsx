@@ -1,15 +1,15 @@
 import styles from './home.module.scss';
 
-import ThemeChanger from '@/hooks/ThemeChanger';
+
+import Header from '@/components/common/header';
 
 const Home = () => {
   return (
-    <>
-      <ThemeChanger />
+    <>      
+      <Header />
       <p className={styles.title}>Home</p>
     </>
-  )
-  
+  );
 }
 
 export default Home;
