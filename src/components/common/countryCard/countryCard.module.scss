@@ -1,33 +1,40 @@
 .card {
-  margin: 8px;
-  width: 300px;
   height: 340px;
+  max-width: 300px;
   overflow: hidden;
   border-radius: 8px;
   background-color: var(--color-elements);
   box-shadow: rgba(0, 0, 0, 0.1) 5px 10px 15px -3px;
-}
 
-.info {
-  display: flex;
-  padding:  5px 20px 20px;
-  flex-direction: column;  
-
-  &__title {
-    font-size: 16px;
-    font-weight: 800;
-    margin: 20px 0;
+  &__img {
+    width: 100%;
+    max-width: 300px;
+    height: 170px;
+    position: relative;
   }
 
-  .row {
-    margin-bottom: 5px;
-
-    &__label {
-      font-weight: 600;
+  .info {
+    display: flex;
+    padding:  0 20px 20px;
+    flex-direction: column;  
+  
+    &__title {
+      font-size: 16px;
+      font-weight: 800;
+      margin: 20px 0;
     }
   
-    &__value {
-      font-weight: 300;
+    .row {
+      margin-bottom: 5px;
+  
+      &__label {
+        font-weight: 600;
+      }
+    
+      &__value {
+        font-weight: 300;
+      }
     }
   }
 }
+

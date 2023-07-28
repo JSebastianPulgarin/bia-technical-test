@@ -12,11 +12,11 @@ const Home = () => {
     <MainLayout {...{ fetcher: getAllCountries, url: ENDPOINT_GET_ALL_COUNTRIES }}>      
       {({ data }) => {
         return (
-          <div>
-            <Row gutter={[20, 50]} className={styles.containerCards__row}>
+          <div className={styles.mainContainer}>
+            <Row gutter={[60, 60]}>
               {data.map((country: any, index: number) => {
                 return (
-                  <Col key={index} xs={24} sm={12} md={6}>
+                  <Col key={index} xs={24} sm={12} md={12} lg={8} xl={6}>
                     <CountryCard 
                       flag={country?.flags.png}
                       name={country?.name.common}

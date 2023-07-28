@@ -7,13 +7,14 @@ import formatNumberWithCommas from '@/utils/formatNumberWithCommas';
 const CountryCard = ({ flag, name, population, region, capital }) => {
   return (
     <div className={styles.card}>
-      <Image
-        src={flag}
-        width={300}
-        height={170}
-        alt={`${name} Flag`}
-        sizes="(max-width: 300px) 100vw, 300px"
-      />
+      <div className={styles.card__img}>
+        <Image
+          fill
+          src={flag}
+          alt={`${name} Flag`}
+          sizes="(max-width: 300px) 100vw, 300px"
+        />
+      </div>
       <div className={styles.info}>
         <span className={styles.info__title}>{name}</span>
         <div className={styles.row}>
