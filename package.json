@@ -1,5 +1,5 @@
 {
-  "name": "preview-mode-demo",
+  "name": "bia-technical-test",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,18 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
-    "@reach/alert-dialog": "^0.8.6",
-    "@reach/dialog": "^0.8.5",
-    "aws-sdk": "^2.632.0",
-    "copy-to-clipboard": "^3.3.1",
-    "next": "^12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "sass": "^1.64.1",
-    "shortid": "^2.2.15",
-    "slate": "^0.57.1",
-    "slate-history": "^0.57.1",
-    "slate-react": "^0.57.1"
+    "@ant-design/cssinjs": "^1.16.0",
+    "antd": "^5.7.3",
+    "eslint-config-next": "^13.4.12",
+    "next": "^13.4.12",
+    "next-themes": "^0.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.64.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",

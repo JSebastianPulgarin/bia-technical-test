@@ -1,0 +1,14 @@
+.header {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 $horizontal-padding;
+  justify-content: space-between;
+  background-color: var(--color-elements);
+
+  &__title {
+    font-weight: 800;
+  }
+}
