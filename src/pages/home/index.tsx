@@ -14,9 +14,9 @@ const Home = () => {
         return (
           <div>
             <Row gutter={[20, 50]} className={styles.containerCards__row}>
-              {data.map(country => {
+              {data.map((country: any, index: number) => {
                 return (
-                  <Col xs={24} sm={12} md={6}>
+                  <Col key={index} xs={24} sm={12} md={6}>
                     <CountryCard 
                       flag={country?.flags.png}
                       name={country?.name.common}
