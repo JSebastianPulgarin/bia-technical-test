@@ -1,18 +1,24 @@
 import styles from './countryCards.module.scss';
 import { useState, useMemo, ChangeEvent } from 'react';
 
-import Image from 'next/image'
 import Fuse from 'fuse.js';
-import { Row, Col } from 'antd';
+import Image from 'next/image';
 // components
+import { Col } from '@/components/designSystem/layout/col';
+import { Row } from '@/components/designSystem/layout/row';
 import SearchBar from '@/components/common/searchBar/searchBar';
 import DropdownComponent from '@/components/common/dropdown/dropdown';
 // consts
 import { REGIONS } from '@/consts/dropdown';
 import { fuseOptions } from '@/consts/fuseOptions';
+import { searchForACountry } from '@/consts/keysToSearchBy';
 
 import useDebounce from '@/hooks/useDebounce';
 import formatNumberWithCommas from '@/utils/formatNumberWithCommas';
+
+import locales from '@/locales/en/en.json';
+
+const { home } = locales;
 
 const CountryCards = ({ data, error, isLoading, isValidating }) => {
   const isLoadingActive = isLoading || isValidating;
@@ -25,7 +31,7 @@ const CountryCards = ({ data, error, isLoading, isValidating }) => {
   const filteredData = useMemo(() => {
     if (isLoadingActive || error || !data) return null;
 
-    const fuse = new Fuse(data, { ...fuseOptions, keys: ['name.common'] });
+    const fuse = new Fuse(data, { ...fuseOptions, keys: searchForACountry });
     return fuse.search(debouncedValue).map((value: any) => value.item);
   }, [data, error, isLoadingActive, debouncedValue]);
 
@@ -62,17 +68,17 @@ const CountryCards = ({ data, error, isLoading, isValidating }) => {
                 <div className={styles.info}>
                   <span className={styles.info__title}>{country?.name.common}</span>
                   <div className={styles.row}>
-                    <span className={styles.row__label}>Population: </span>
+                    <span className={styles.row__label}>{home.population}: </span>
                     <span className={styles.row__value}>
                       {formatNumberWithCommas(country?.population)}
                     </span>
                   </div>
                   <div className={styles.row}>
-                    <span className={styles.row__label}>Region: </span>
+                    <span className={styles.row__label}>{home.region}: </span>
                     <span className={styles.row__value}>{country?.region}</span>
                   </div>
                   <div className={styles.row}>
-                    <span className={styles.row__label}>Capital: </span>
+                    <span className={styles.row__label}>{home.capital}: </span>
                     <span className={styles.row__value}>{country?.capital}</span>
                   </div>
                 </div>

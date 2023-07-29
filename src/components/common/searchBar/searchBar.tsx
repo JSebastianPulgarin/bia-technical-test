@@ -1,6 +1,8 @@
-import { Input } from 'antd';
-
 import { SearchOutlined } from '@ant-design/icons';
+
+// components
+import { Input } from '@/components/designSystem/input';
+
 import locales from '@/locales/en/en.json';
 
 const { components: { searchBar } } = locales;

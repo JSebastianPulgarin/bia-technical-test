@@ -2,6 +2,7 @@ import styles from './mainLayout.module.scss';
 
 import useSWR from 'swr';
 
+// components
 import Header from '@/components/common/header/header';
 
 const MainLayout = ({ children, fetcher, url }) => {  

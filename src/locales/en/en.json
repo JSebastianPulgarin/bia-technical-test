@@ -1,5 +1,14 @@
 {
+  "home": {
+    "population": "Population",
+    "region": "Region",
+    "capital": "Capital"
+  },
   "components": {
+    "header": {
+      "title": "Where in the world?",
+      "darkMode": "Dark Mode"
+    },
     "searchBar": {
       "placeholder": "Search for a country..."      
     },
