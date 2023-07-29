@@ -16,66 +16,70 @@ const SelectedCountry = ({ data, error, isLoading, isValidating }) => {
   return (
     <>
       <BackButton />   
-      <div className={styles.card_selected_country}>
+      <div className={styles.cardSelectedCountry}>
         <Row gutter={[60, 60]}>
           <Col xs={24} sm={12} md={12}>
-            <div className={styles.card__img}>
-              <Image
-                fill
-                src={data?.flags.png}
-                alt={`${data?.name.common} Flag`}
-                sizes="(max-width: 300px) 100vw, 300px"
-              />
+            <div className={styles.colImg}>
+              <div className={styles.imgCountry}>
+                <Image
+                  fill
+                  src={data?.flags.png}
+                  alt={`${data?.name.common} Flag`}
+                  sizes="(max-width: 300px) 100vw, 300px"
+                />
+              </div>
             </div>
           </Col>
           <Col xs={24} md={12}>
-            <div className={styles.title}>
-              <span>{data?.name.common}</span>
-            </div>
-            <div className={styles.info}>
-              <div className={styles.principalInfo}>                
-                <div className={styles.row}>
-                  <span className={styles.row__label}>{selectedCountry.nativeName}: </span>
-                  <span className={styles.row__value}>
-                    {data?.name.nativeName[Object.keys(data?.languages)[0]].common}
-                  </span>
-                </div>
-                <div className={styles.row}>
-                  <span className={styles.row__label}>{selectedCountry.population}: </span>
-                  <span className={styles.row__value}>{formatNumberWithCommas(data?.population)}</span>
-                </div>
-                <div className={styles.row}>
-                  <span className={styles.row__label}>{selectedCountry.region}: </span>
-                  <span className={styles.row__value}>{data?.region}</span>
-                </div>
-                <div className={styles.row}>
-                  <span className={styles.row__label}>{selectedCountry.subRegion}: </span>
-                  <span className={styles.row__value}>{data?.subregion}</span>
-                </div>
-                <div className={styles.row}>
-                  <span className={styles.row__label}>{selectedCountry.capital}: </span>
-                  <span className={styles.row__value}>{data?.capital[0]}</span>
-                </div>
+            <div className={styles.colInfo}>
+              <div className={styles.title}>
+                <span>{data?.name.common}</span>
               </div>
+              <div className={styles.info}>
+                <div className={styles.principalInfo}>                
+                  <div className={styles.row}>
+                    <span className={styles.row__label}>{selectedCountry.nativeName}: </span>
+                    <span className={styles.row__value}>
+                      {data?.name.nativeName[Object.keys(data?.languages)[0]].common}
+                    </span>
+                  </div>
+                  <div className={styles.row}>
+                    <span className={styles.row__label}>{selectedCountry.population}: </span>
+                    <span className={styles.row__value}>{formatNumberWithCommas(data?.population)}</span>
+                  </div>
+                  <div className={styles.row}>
+                    <span className={styles.row__label}>{selectedCountry.region}: </span>
+                    <span className={styles.row__value}>{data?.region}</span>
+                  </div>
+                  <div className={styles.row}>
+                    <span className={styles.row__label}>{selectedCountry.subRegion}: </span>
+                    <span className={styles.row__value}>{data?.subregion}</span>
+                  </div>
+                  <div className={styles.row}>
+                    <span className={styles.row__label}>{selectedCountry.capital}: </span>
+                    <span className={styles.row__value}>{data?.capital[0]}</span>
+                  </div>
+                </div>
 
-              <div className={styles.secondInfo}>
-                <div className={styles.row}>
-                  <span className={styles.row__label}>{selectedCountry.topLevelDomain}: </span>
-                  <span className={styles.row__value}>{data?.tld[0]}</span>
-                </div>
-                <div className={styles.row}>
-                  <span className={styles.row__label}>{selectedCountry.currencies}: </span>
-                  <span className={styles.row__value}>
-                    {data?.currencies[Object.keys(data?.currencies)[0]]?.name}
-                  </span>
-                </div>
-                <div className={styles.row}>
-                  <span className={styles.row__label}>{selectedCountry.languages}: </span>
-                  <span className={styles.row__value}>{data?.tld[0]}</span>
-                </div>
-              </div>              
+                <div className={styles.secondInfo}>
+                  <div className={styles.row}>
+                    <span className={styles.row__label}>{selectedCountry.topLevelDomain}: </span>
+                    <span className={styles.row__value}>{data?.tld[0]}</span>
+                  </div>
+                  <div className={styles.row}>
+                    <span className={styles.row__label}>{selectedCountry.currencies}: </span>
+                    <span className={styles.row__value}>
+                      {data?.currencies[Object.keys(data?.currencies)[0]]?.name}
+                    </span>
+                  </div>
+                  <div className={styles.row}>
+                    <span className={styles.row__label}>{selectedCountry.languages}: </span>
+                    <span className={styles.row__value}>{data?.tld[0]}</span>
+                  </div>
+                </div>              
+              </div>
+              <BorderCountries borders={data?.borders}/>
             </div>
-            <BorderCountries borders={data?.borders}/>
           </Col>
         </Row>
       </div>
