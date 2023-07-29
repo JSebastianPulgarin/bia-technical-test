@@ -1,0 +1,10 @@
+{
+  "components": {
+    "searchBar": {
+      "placeholder": "Search for a country..."      
+    },
+    "dropdown": {
+      "placeholder": "Filter by Region"
+    }
+  }
+}

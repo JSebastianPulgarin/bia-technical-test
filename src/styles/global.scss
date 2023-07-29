@@ -1,20 +1,83 @@
 @import 'variables';
 
 :root {
-  color: hsl(200, 15%, 8%);
+  --color-text: hsl(200, 15%, 8%);
   background-color:  hsl(0, 0%, 98%);
-  --color-elements: hsl(0, 0%, 100%);
-  --color-input: hsl(0, 0%, 52%);
+  --color-elements: hsl(0, 0%, 100%);  
+  --color-input:  hsl(0, 0%, 100%);
 }
 
 [data-theme='dark'] {
-  color: hsl(0, 0%, 100%);
+  --color-text: hsl(0, 0%, 100%);
   background-color:  hsl(207, 26%, 17%);
   --color-elements: hsl(209, 23%, 22%);
-  --color-input:  hsl(0, 0%, 100%);
+  --color-input: hsl(0, 0%, 52%);
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+// input
+span.ant-input-affix-wrapper {
+  height: 48px;    
+  color: var(--color-text);
+  box-shadow: $box-shadow-color;
+  border: 1px solid var(--color-elements);
+  background-color: var(--color-elements);  
+
+  .ant-input-prefix {
+    margin-right: 11px;
+  }
+
+  input.ant-input {
+    color: var(--color-text);
+    background-color: var(--color-elements);
+
+    &::placeholder {
+      font-weight: 300;
+      color: var(--color-text);
+    }    
+  }
+
+  &:hover {
+    border-color: var(--color-elements) !important;
+  }
+}
+
+// button
+button.ant-btn {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  box-shadow: $box-shadow-color;
+  border: 1px solid var(--color-elements);
+  background-color: var(--color-elements);
+
+  .ant-space {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ant-space-item .anticon-down {
+    padding-top: 7px;
+  }
+
+  &:hover {
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-elements) !important;
+  }
+}
+
+// dropdown
+div .ant-dropdown .ant-dropdown-menu {
+  background-color: var(--color-elements);
+  
+  .ant-dropdown-menu-title-content {
+    color: var(--color-text);
+  }
 }

@@ -3,8 +3,8 @@
   max-width: 300px;
   overflow: hidden;
   border-radius: 8px;
+  box-shadow: $box-shadow-color;
   background-color: var(--color-elements);
-  box-shadow: rgba(0, 0, 0, 0.1) 5px 10px 15px -3px;
 
   &__img {
     width: 100%;
