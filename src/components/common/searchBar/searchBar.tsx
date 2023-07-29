@@ -5,9 +5,14 @@ import locales from '@/locales/en/en.json';
 
 const { components: { searchBar } } = locales;
 
-const SearchBar = () => {
+const SearchBar = ({ value, onChange }) => {
   return (
-    <Input placeholder={searchBar.placeholder} prefix={<SearchOutlined />} />
+    <Input 
+      value={value} 
+      onChange={onChange}
+      placeholder={searchBar.placeholder} 
+      prefix={<SearchOutlined />} 
+    />
   )
 }
 
