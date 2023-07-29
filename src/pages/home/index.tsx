@@ -8,6 +8,7 @@ import SearchBar from '@/components/common/searchBar/searchBar';
 import MainLayout from '@/components/layouts/mainLayout/mainLayout';
 import CountryCard from '@/components/common/countryCard/countryCard';
 import DropdownComponent from '@/components/common/dropdown/dropdown';
+import { REGIONS } from '@/consts/dropdown';
 
 const Home = () => {
   return (
@@ -20,7 +21,7 @@ const Home = () => {
                 <SearchBar />
               </div>
               <div className={styles.toolbar__dropdown}>
-                <DropdownComponent />
+                <DropdownComponent items={REGIONS} />
               </div>
             </div>
             <Row gutter={[60, 60]}>
