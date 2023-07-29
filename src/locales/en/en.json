@@ -12,8 +12,7 @@
     "capital": "Capital",
     "topLevelDomain": "Top Level Domain",
     "currencies": "Currencies",
-    "languages": "Languages",
-    "borderCountries": "Border Countries"
+    "languages": "Languages"    
   },
   "components": {
     "header": {
@@ -28,6 +27,9 @@
     },
     "backButton": {
       "title": "Back"
+    },
+    "borderCountries": {
+      "title": "Border Countries"
     }
   }
 }

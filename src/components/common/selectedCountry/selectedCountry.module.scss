@@ -1,3 +1,5 @@
+@import '@/styles/mediaQueries';
+
 .card_selected_country {
   width: 100%;
   height: 400px;
@@ -14,57 +16,51 @@
   
     &__img {
       width: 100%;
-      max-width: 300px;
       height: 170px;
       position: relative;
+
+      @include mobile() {
+        max-width: 300px;
+      }
     }
   }
 
-  .info {
-    .title {
-      margin-bottom: 15px;
-    }
-    .title span {
-      font-size: 20px;
-      font-weight: 800;
-    }
+  .title {
+    margin-bottom: 15px;
+  }
 
-    .row {
-      margin-bottom: 5px;
+  .title span {
+    font-size: 20px;
+    font-weight: 800;
+  }
 
-      &__label {
-        font-weight: 600;
-      }
-
-      &__value {
-        font-weight: 300;
-      }
-    }
-
-    .borderCountries {
+  .info {      
+    @include smallTablet() {
       display: flex;
-      flex-direction: column;
-
-      &__label {
-        font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-
-      &__border {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        margin-bottom: 15px;
-
-        span {
-          width: min-content;
-          padding: 5px 10px;
-          margin: 0 15px 10px 0;
-          box-shadow: $box-shadow-color;
-          background-color: var(--color-elements);
-        }
-      }
     }
   }
+
+  .principalInfo {
+    margin-bottom: 20px;
+
+    @include smallTablet() {
+      margin-right: 100px;
+    }
+  }
+
+  .secondInfo {
+    margin-bottom: 20px;
+  }    
+
+  .row {
+    margin-bottom: 5px;
+
+    &__label {
+      font-weight: 600;
+    }
+
+    &__value {
+      font-weight: 300;
+    }
+  }  
 }
