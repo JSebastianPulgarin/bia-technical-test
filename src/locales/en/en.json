@@ -4,6 +4,17 @@
     "region": "Region",
     "capital": "Capital"
   },
+  "selectedCountry": {
+    "nativeName": "Native Name",
+    "population": "Population",
+    "region": "Region",
+    "subRegion": "Sub Region",
+    "capital": "Capital",
+    "topLevelDomain": "Top Level Domain",
+    "currencies": "Currencies",
+    "languages": "Languages",
+    "borderCountries": "Border Countries"
+  },
   "components": {
     "header": {
       "title": "Where in the world?",
@@ -14,6 +25,9 @@
     },
     "dropdown": {
       "placeholder": "Filter by Region"
+    },
+    "backButton": {
+      "title": "Back"
     }
   }
 }

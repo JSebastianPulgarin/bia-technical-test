@@ -31,6 +31,10 @@
   box-shadow: $box-shadow-color;
   background-color: var(--color-elements);
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &__img {
     width: 100%;
     max-width: 300px;

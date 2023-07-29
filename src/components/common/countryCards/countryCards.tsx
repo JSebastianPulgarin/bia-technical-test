@@ -3,6 +3,7 @@ import { useState, useMemo, ChangeEvent } from 'react';
 
 import Fuse from 'fuse.js';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 // components
 import { Col } from '@/components/designSystem/layout/col';
 import { Row } from '@/components/designSystem/layout/row';
@@ -21,6 +22,7 @@ import locales from '@/locales/en/en.json';
 const { home } = locales;
 
 const CountryCards = ({ data, error, isLoading, isValidating }) => {
+  const router = useRouter();
   const isLoadingActive = isLoading || isValidating;
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedValue] = useDebounce<string>(
@@ -37,6 +39,10 @@ const CountryCards = ({ data, error, isLoading, isValidating }) => {
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
+  };
+
+  const handleCardClick = (country: string, code: string) => {
+    router.push(`/${country}/${code}`);
   };
 
   return (
@@ -56,13 +62,17 @@ const CountryCards = ({ data, error, isLoading, isValidating }) => {
         {(debouncedValue === '' ? data : filteredData).map((country: any, index: number) => {
           return (
             <Col key={index} xs={24} sm={12} md={12} lg={8} xl={6}>
-              <div key={index} className={styles.card}>
+              <div 
+                key={index} 
+                className={styles.card} 
+                onClick={() => handleCardClick(country?.name.common, country?.cca2)}
+              >
                 <div className={styles.card__img}>
                   <Image
                     fill
                     src={country?.flags.png}
                     alt={`${country?.name.common} Flag`}
-                    sizes="(max-width: 300px) 100vw, 300px"
+                    sizes="(mLinkax-width: 300px) 100vw, 300px"
                   />
                 </div>
                 <div className={styles.info}>

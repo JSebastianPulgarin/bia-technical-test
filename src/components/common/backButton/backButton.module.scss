@@ -1,0 +1,13 @@
+.backButton {
+  width: 100px;
+  
+  button {
+    display: flex;
+    height: 35px;
+    justify-content: space-around;
+  }
+
+  &__icon {
+    font-weight: 800;
+  }
+}
