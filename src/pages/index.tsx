@@ -1,14 +1,20 @@
+import dynamic from 'next/dynamic';
 // components
-import MainLayout from '@/components/layouts/mainLayout/mainLayout';
+import Loader from '@/components/common/loader/loader';
 import CountryCards from '@/components/common/countryCards/countryCards';
 // consts
 import { ENDPOINT_GET_ALL_COUNTRIES } from '@/consts/endpoints';
 
 import { axiosCall } from '@/api/axiosCall';
 
+const MainLayoutComponent = dynamic(
+  () => import('@/components/layouts/mainLayout/mainLayout'), 
+  { loading: () => <Loader /> }
+);
+
 const Home = () => {
   return (
-    <MainLayout {...{ fetcher: axiosCall, url: ENDPOINT_GET_ALL_COUNTRIES }}>      
+    <MainLayoutComponent {...{ fetcher: axiosCall, url: ENDPOINT_GET_ALL_COUNTRIES }}>      
       {({ data, error, isLoading, isValidating }) => {
         return (
           <CountryCards 
@@ -21,7 +27,7 @@ const Home = () => {
           />
         );
       }}
-    </MainLayout>
+    </MainLayoutComponent>
   );
 }
 
