@@ -1,5 +1,5 @@
 # Where is the world?
-El proyecto "Nombre del Proyecto" es una aplicación web que muestra las banderas del mundo y permite a los usuarios ver información detallada sobre cada país representado por las banderas. Esta aplicación se creó como parte de una prueba técnica para demostrar habilidades en el desarrollo Frontend.
+El proyecto **where is the world?** es una aplicación web que muestra las banderas del mundo y permite a los usuarios ver información detallada sobre cada país representado por las banderas. Esta aplicación se creó como parte de una prueba técnica para demostrar habilidades en el desarrollo Frontend.
 
 Los usuarios pueden buscar países por nombre o filtrarlos por región para encontrar fácilmente los países que desean explorar. Al hacer clic en una bandera, se abrirá una vista detallada que mostrará información adicional sobre el país, como su nombre, capital, población, idiomas oficiales, moneda y más.
 
@@ -48,7 +48,6 @@ Para implementar la solución, se siguió la arquitectura propuesta y se tomaron
 
 - Se utilizó SWR (Stale-While-Revalidate) como librería para el manejo de caché y la gestión de solicitudes HTTP a la API de https://restcountries.com/#rest-countries. SWR permite almacenar en caché los resultados de las solicitudes para mejorar el rendimiento y actualizar automáticamente los datos en segundo plano.
 - Se implementó la funcionalidad de búsqueda y filtrado utilizando la librería fuse.js. Esta librería proporciona una búsqueda rápida y flexible con opciones de filtrado en el cliente. Los usuarios pueden buscar países por nombre y filtrarlos por región de manera eficiente y en tiempo real.
-- Los resultados de búsqueda y filtrado se presentan de manera dinámica en la interfaz de usuario gracias a la combinación de SWR y fuse.js. Los usuarios pueden experimentar una experiencia de búsqueda fluida y obtener resultados precisos en tiempo real.
 - Los componentes se diseñaron con un enfoque en la reutilización y la modularidad, lo que facilita la adición de nuevas funcionalidades o mejoras en el futuro.
 - Para los estilos, se utilizó SCSS (Sass) como preprocesador de CSS. SCSS permitió escribir estilos más legibles, estructurados y reutilizables, lo que mejoró la organización del código de estilos.
 - Se implementó un tema de dark mode utilizando CSS variables, lo que permite a los usuarios alternar entre temas claro y oscuro según sus preferencias.
@@ -65,7 +64,8 @@ cd bia-technical-test/
 ```
 yarn install
 ```
-4. Ejecuta el proyecto:
+4. Asegúrate de agregar las variables de entorno necesarias para el correcto funcionamiento del proyecto. Puedes consultar el archivo ".env.example" para conocer las variables requeridas. Debes crear un archivo ".env" en la raíz del proyecto y definir las variables de entorno necesarias siguiendo el formato del archivo de ejemplo.
+5. Ejecuta el proyecto:
 ```
 yarn dev
 ```
