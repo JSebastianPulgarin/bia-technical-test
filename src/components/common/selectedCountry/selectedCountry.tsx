@@ -18,14 +18,13 @@ const SelectedCountry = ({ data, error, isLoading, isValidating }) => {
       <BackButton />   
       <div className={styles.cardSelectedCountry}>
         <Row gutter={[60, 60]}>
-          <Col xs={24} sm={12} md={12}>
+          <Col xs={24} sm={24} md={12}>
             <div className={styles.colImg}>
               <div className={styles.imgCountry}>
                 <Image
                   fill
                   src={data?.flags.png}
                   alt={`${data?.name.common} Flag`}
-                  sizes="(max-width: 300px) 100vw, 300px"
                 />
               </div>
             </div>
@@ -35,6 +34,7 @@ const SelectedCountry = ({ data, error, isLoading, isValidating }) => {
               <div className={styles.title}>
                 <span>{data?.name.common}</span>
               </div>
+              <br />
               <div className={styles.info}>
                 <div className={styles.principalInfo}>                
                   <div className={styles.row}>
@@ -59,8 +59,7 @@ const SelectedCountry = ({ data, error, isLoading, isValidating }) => {
                     <span className={styles.row__label}>{selectedCountry.capital}: </span>
                     <span className={styles.row__value}>{data?.capital[0]}</span>
                   </div>
-                </div>
-
+                </div>                
                 <div className={styles.secondInfo}>
                   <div className={styles.row}>
                     <span className={styles.row__label}>{selectedCountry.topLevelDomain}: </span>
@@ -78,6 +77,7 @@ const SelectedCountry = ({ data, error, isLoading, isValidating }) => {
                   </div>
                 </div>              
               </div>
+              <br />
               <BorderCountries borders={data?.borders}/>
             </div>
           </Col>
