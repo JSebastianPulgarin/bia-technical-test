@@ -5,8 +5,12 @@ import useSWR from 'swr';
 // components
 import Header from '@/components/common/header/header';
 
-const MainLayout = ({ children, fetcher, url }) => {  
-  const { data, error, mutate, isLoading, isValidating } = useSWR(url, fetcher, { revalidateOnFocus: false });
+import type { IMainLayout } from './IMainLayout';
+
+const MainLayout = ({ children, fetcher, url, serverData, revalidateOnFocus = false }: IMainLayout.IProps) => {  
+  const { data, error, mutate, isLoading, isValidating } = useSWR(
+    url, fetcher, { initialData: serverData, revalidateOnFocus: revalidateOnFocus }
+  );
 
   if (error) return <div>failed to load</div>
   if (isLoading) return <div>loading...</div>
