@@ -23,6 +23,10 @@
         max-width: 500px;
       }
     }
+
+    @include smallTablet() {              
+      justify-content: flex-start;
+    }
   }  
 
   .colInfo {
