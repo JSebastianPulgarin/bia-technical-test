@@ -73,7 +73,9 @@ const SelectedCountry = ({ data, error, isLoading, isValidating }) => {
                   </div>
                   <div className={styles.row}>
                     <span className={styles.row__label}>{selectedCountry.languages}: </span>
-                    <span className={styles.row__value}>{data?.tld[0]}</span>
+                    <span className={styles.row__value}>
+                      {Object.values(data?.languages).join(', ')}
+                    </span>
                   </div>
                 </div>              
               </div>

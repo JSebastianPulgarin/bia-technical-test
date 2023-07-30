@@ -1,24 +1,22 @@
-import type { MenuProps } from 'antd';
-
-export const REGIONS: MenuProps['items'] = [
+export const REGIONS = [
   {
-    key: 'africa',
+    value: 'africa',
     label: 'Africa',
   },
   {
-    key: 'americas',
+    value: 'americas',
     label: 'Americas',
   },
   {
-    key: 'asia',
+    value: 'asia',
     label: 'Asia',
   },
   {
-    key: 'europe',
+    value: 'europe',
     label: 'Europe',
   },
   {
-    key: 'oceania',
+    value: 'oceania',
     label: 'Oceania',
   },
 ];

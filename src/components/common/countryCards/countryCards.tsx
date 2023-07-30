@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import { Col } from '@/components/designSystem/layout/col';
 import { Row } from '@/components/designSystem/layout/row';
 import SearchBar from '@/components/common/searchBar/searchBar';
-import DropdownComponent from '@/components/common/dropdown/dropdown';
+import SelectComponent from '@/components/common/select/select';
 // consts
 import { REGIONS } from '@/consts/dropdown';
 import { fuseOptions } from '@/consts/fuseOptions';
@@ -24,18 +24,41 @@ const { home } = locales;
 const CountryCards = ({ data, error, isLoading, isValidating }) => {
   const router = useRouter();
   const isLoadingActive = isLoading || isValidating;
+
+  const [selectedRegion, setSelectedRegion] = useState(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedValue] = useDebounce<string>(
     searchTerm,
     300
   );
 
+  const handleRegionSelect = (region: string) => {
+    setSelectedRegion(region);
+  };
+
+  const filterData = (data: any, region: string | null, searchTerm: string) => {
+    const fuse = new Fuse(data, { ...fuseOptions, keys: searchForACountry });
+
+    let filteredData = data;
+
+    if (searchTerm) {
+      filteredData = fuse.search(searchTerm).map((value) => value.item);
+    }
+
+    if (region) {
+      const regionFilter = region.toLowerCase();
+      filteredData = filteredData.filter(
+        (country) => country.region && country.region.toLowerCase() === regionFilter
+      );
+    }
+
+    return filteredData;
+  };
+
   const filteredData = useMemo(() => {
     if (isLoadingActive || error || !data) return null;
-
-    const fuse = new Fuse(data, { ...fuseOptions, keys: searchForACountry });
-    return fuse.search(debouncedValue).map((value: any) => value.item);
-  }, [data, error, isLoadingActive, debouncedValue]);
+    return filterData(data, selectedRegion, debouncedValue);
+  }, [data, error, isLoadingActive, debouncedValue, selectedRegion]);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -55,11 +78,15 @@ const CountryCards = ({ data, error, isLoading, isValidating }) => {
           />
         </div>
         <div className={styles.toolbar__dropdown}>
-          <DropdownComponent items={REGIONS} />
+          <SelectComponent 
+            items={REGIONS} 
+            value={selectedRegion} 
+            onSelect={handleRegionSelect} 
+          />
         </div>
       </div>
       <Row gutter={[60, 60]}>
-        {(debouncedValue === '' ? data : filteredData).map((country: any, index: number) => {
+        {filteredData?.map((country: any, index: number) => {
           return (
             <Col key={index} xs={24} sm={12} md={12} lg={8} xl={6}>
               <div 

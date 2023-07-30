@@ -1,3 +1,3 @@
 export const fuseOptions = {
-	threshold: 0.0,
+	threshold: 0.1,
 };

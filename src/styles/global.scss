@@ -79,11 +79,32 @@ button.ant-btn {
   }
 }
 
-// dropdown
-div .ant-dropdown .ant-dropdown-menu {
-  background-color: var(--color-elements);
+// select 
+.ant-select {
+  width: 100%;
+  box-shadow: $box-shadow-color;
+
+  div.ant-select-selector {
+    height: 48px !important;
+    display: flex;
+    align-items: center;  
+    border: 1px solid var(--color-elements) !important;
+    background-color: var(--color-elements) !important;
   
-  .ant-dropdown-menu-title-content {
+    span {
+      color: var(--color-text) !important;
+    }    
+  }
+
+  .ant-select-arrow {
+    color: var(--color-text);
+  }
+}
+
+.ant-select-dropdown {
+  background-color: var(--color-elements);
+
+  .ant-select-item {
     color: var(--color-text);
   }
 }
