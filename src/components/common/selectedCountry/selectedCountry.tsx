@@ -12,7 +12,7 @@ import formatNumberWithCommas from '@/utils/formatNumberWithCommas';
 
 const { selectedCountry } = locales;
 
-const SelectedCountry = ({ data, error, isLoading, isValidating }) => {
+const SelectedCountry = ({ data }) => {
   return (
     <>
       <BackButton />   

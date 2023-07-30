@@ -3,6 +3,8 @@ El proyecto "Nombre del Proyecto" es una aplicación web que muestra las bandera
 
 Los usuarios pueden buscar países por nombre o filtrarlos por región para encontrar fácilmente los países que desean explorar. Al hacer clic en una bandera, se abrirá una vista detallada que mostrará información adicional sobre el país, como su nombre, capital, población, idiomas oficiales, moneda y más.
 
+Puedes ver el proyecto en acción haciendo clic en el siguiente enlace: [Ver el Proyecto](https://bia-technical-test-umber.vercel.app/)
+
 ## Arquitectura Propuesta
 Para resolver el reto, se propone una arquitectura Frontend utilizando el framework Next.js. La organización del proyecto seguirá una estructura de carpetas que promueve la modularidad y la reutilización de componentes. A continuación, se describen las principales carpetas utilizadas:
 
