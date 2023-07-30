@@ -14,6 +14,10 @@
   --color-input: hsl(0, 0%, 52%);
 }
 
+* {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -21,7 +25,7 @@ body {
 
 // input
 span.ant-input-affix-wrapper {
-  height: 48px;    
+  height: 48px;      
   color: var(--color-text);
   box-shadow: $box-shadow-color;
   border: 1px solid var(--color-elements);
@@ -34,10 +38,12 @@ span.ant-input-affix-wrapper {
   input.ant-input {
     color: var(--color-text);
     background-color: var(--color-elements);
+    font-family: 'Nunito Sans', sans-serif;
 
     &::placeholder {
       font-weight: 300;
       color: var(--color-text);
+      font-family: 'Nunito Sans', sans-serif;
     }    
   }
 
