@@ -24,8 +24,7 @@
 }
 
 .card {
-  height: 340px;
-  max-width: 300px;
+  width: 100%;  
   overflow: hidden;
   border-radius: 8px;
   box-shadow: $box-shadow-color;
@@ -37,9 +36,13 @@
 
   &__img {
     width: 100%;
-    max-width: 300px;
-    height: 170px;
+    height: auto;
     position: relative;
+    aspect-ratio: 2 / 1;   
+    
+    @include mobile() {
+      max-width: 300px;
+    }
   }
 
   .info {
@@ -64,6 +67,10 @@
         font-weight: 300;
       }
     }
+  }
+
+  @include mobile() {
+    max-width: 300px;
   }
 }
 
