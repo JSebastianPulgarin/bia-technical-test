@@ -1,0 +1,35 @@
+{
+  "home": {
+    "population": "Population",
+    "region": "Region",
+    "capital": "Capital"
+  },
+  "selectedCountry": {
+    "nativeName": "Native Name",
+    "population": "Population",
+    "region": "Region",
+    "subRegion": "Sub Region",
+    "capital": "Capital",
+    "topLevelDomain": "Top Level Domain",
+    "currencies": "Currencies",
+    "languages": "Languages"    
+  },
+  "components": {
+    "header": {
+      "title": "Where in the world?",
+      "darkMode": "Dark Mode"
+    },
+    "searchBar": {
+      "placeholder": "Search for a country..."      
+    },
+    "dropdown": {
+      "placeholder": "Filter by Region"
+    },
+    "backButton": {
+      "title": "Back"
+    },
+    "borderCountries": {
+      "title": "Border Countries"
+    }
+  }
+}

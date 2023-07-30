@@ -1,0 +1,9 @@
+@import '@/styles/mediaQueries';
+
+.mainContent {
+  padding: $vertical-padding-content-responsive $horizontal-padding-responsive;
+
+  @include mobile() {
+    padding: $vertical-padding-content $horizontal-padding;
+  }
+}

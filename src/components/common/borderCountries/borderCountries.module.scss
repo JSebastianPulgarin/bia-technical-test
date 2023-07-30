@@ -1,0 +1,42 @@
+@import '@/styles/mediaQueries';
+
+.borderCountries {
+  display: flex;
+  height: min-content;
+  flex-direction: column;
+
+  &__label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+
+    @include smallTablet() {
+      margin-right: 10px;
+    }
+  }
+
+  &__border {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    justify-content: flex-start;
+    
+    span {
+      width: min-content;
+      padding: 5px 10px;
+      box-shadow: $box-shadow-color;
+      background-color: var(--color-elements);        
+    }      
+  }
+
+  .cardsContainer {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include smallTablet() {
+    align-items: center;
+    flex-direction: row;
+  }
+}

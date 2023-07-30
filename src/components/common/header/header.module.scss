@@ -1,0 +1,21 @@
+@import '@/styles/mediaQueries';
+
+.header {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: $box-shadow-color;
+  justify-content: space-between;
+  background-color: var(--color-elements);
+  padding: 0 $horizontal-padding-responsive;
+
+  &__title {
+    font-weight: 800;
+  }
+
+  @include mobile() {
+    padding: 0 $horizontal-padding;
+  }
+}
