@@ -1,6 +1,9 @@
 @import '@/styles/mediaQueries';
 
 .mainContent {
+  height: 100%;
+  min-height: 100%;
+
   padding: $vertical-padding-content-responsive $horizontal-padding-responsive;
 
   @include mobile() {
