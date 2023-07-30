@@ -5,19 +5,19 @@ import SelectedCountry from '@/components/common/selectedCountry/selectedCountry
 // consts
 import { ENDPOINT_GET_COUNTRY_BY_CODE } from '@/consts/endpoints';
 
-import { getCountryByCode } from '@/api/ getCountryByCode';
+import { axiosCall } from '@/api/axiosCall';
 
 const DetailCountry = () => {
   const router = useRouter();
   const { code } = router.query;
 
   return (
-    <MainLayout {...{ fetcher: getCountryByCode, url: `${ENDPOINT_GET_COUNTRY_BY_CODE}/${code}` }}>      
+    <MainLayout {...{ fetcher: axiosCall, url: `${ENDPOINT_GET_COUNTRY_BY_CODE}/${code}` }}>      
       {({ data, error, isLoading, isValidating }) => {
         return (
           <SelectedCountry 
             {...{
-              data,
+              data: data[0],
               error,
               isValidating,
               isLoading,
