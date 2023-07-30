@@ -1,7 +1,12 @@
-import { useState, useEffect } from 'react';
+import styles from './themeChanger.module.scss';
 
-import styles from './themeChanger.module.scss'
-import { useTheme } from 'next-themes'
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+import { BiSolidMoon } from "react-icons/bi";
+
+import locales from '@/locales/en/en.json';
+
+const { components: { header } } = locales;
 
 const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
@@ -21,7 +26,8 @@ const ThemeChanger = () => {
 
   return (
     <div className={styles.darkMode} onClick={handleTheme}>
-      <span className={styles.darkMode__title}>Dark Mode</span>
+      <BiSolidMoon className={styles.darkMode__icon} />
+      <span className={styles.darkMode__title}>{header.darkMode}</span>
     </div>
   )
 }

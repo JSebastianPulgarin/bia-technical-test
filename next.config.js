@@ -13,6 +13,20 @@ module.exports = {
     includePaths: [path.join(__dirname, 'src/styles')],
     prependData: '@import "variables";',
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'flagcdn.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+        port: '',
+      },
+    ],
+  },
   async rewrites() {
     return [
       {

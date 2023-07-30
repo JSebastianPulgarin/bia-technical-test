@@ -1,4 +1,11 @@
 .darkMode {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  
+  &__icon {
+    margin-right: 5px;
+  }
 
   &__title {
     font-weight: 600;
