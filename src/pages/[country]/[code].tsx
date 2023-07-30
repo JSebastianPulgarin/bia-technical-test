@@ -13,14 +13,11 @@ const DetailCountry = ({ serverData }) => {
 
   return (
     <MainLayout {...{ fetcher: axiosCall, url: `${ENDPOINT_GET_COUNTRY_BY_CODE}/${code}`, serverData }}>      
-      {({ data, error, isLoading, isValidating }) => {
+      {({ data }) => {
         return (
           <SelectedCountry 
             {...{
               data: data[0],
-              error,
-              isValidating,
-              isLoading,
             }}
           />
         );
